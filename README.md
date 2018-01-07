@@ -16,7 +16,7 @@
 -->
 # State Value Equality Node
 
-A simple authentication node for ForgeRock's [Identity Platform][forgerock_platform] 5.5 and above. This node will compare values currently held in an authenticating session's shared state, resulting in the boolean true output if they are all equal, false if any are not. 
+A simple authentication node for ForgeRock's [Identity Platform][forgerock_platform] 5.5 and above. This node will compare values currently held in an authenticating session's shared state, resulting in the boolean true output if they are equal, false if any are not. 
 
 When multiple key/value pairs are entered to be checked, the number of them which must return true is configured by the **operation mode** selection.
 
@@ -39,7 +39,11 @@ Configuration Screenshot
 
 The above screenshot demonstrates the flexibility of authentication nodes by generating a very (VERY!) simple device fingerprinting journey using granular authentication nodes. By storing the user's current browser in the authentication shared state and comparing it against the previous browser used to authenticate as stored in the user's profile we are able to increase or decrease their authentication level, before storing the new previous browser value in the profile.
 
+## Installation
+
 Copy the .jar file from the ../target directory into the ../web-container/webapps/openam/WEB-INF/lib directory where AM is deployed.  Restart the web container to pick up the new node.  The node will then appear in the authentication trees components palette.
+
+## Disclaimer
 
 The code in this repository has binary dependencies that live in the ForgeRock maven repository. Maven can be configured to authenticate to this repository by following the following [ForgeRock Knowledge Base Article](https://backstage.forgerock.com/knowledge/kb/article/a74096897).
         
